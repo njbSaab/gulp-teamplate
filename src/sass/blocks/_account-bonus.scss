@@ -93,6 +93,16 @@
         p{
             font-size: 18px;
         }
+        .santan-anim {
+            color: initial;
+            visibility: visible;
+            &::after{
+                display: none;
+            }
+        }
+        .bonus-account-wrapper{
+            max-width: 100%;
+        }
     }
 }
 @media (max-width: 768px){
@@ -100,6 +110,7 @@
         .btn-bonus-wrapper{
             padding: rem(10px) rem(15px);
             border-radius: 16.7px;
+            gap: rem(30px);
         }
         .btn-bonus-text{
             font-size: 18px;
@@ -121,6 +132,9 @@
         }
         .btn-bonus-text{
             font-size: 13px;
+        }
+        .bonus-account-wrapper .font-25{
+            font-size: 14px;
         }
     }
 }

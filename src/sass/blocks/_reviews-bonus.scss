@@ -15,6 +15,13 @@
     .img-wrapper{
         flex: 100%;
     }
+    .reviews-img{
+        flex: 40%;
+     }
+     .reviews-text{
+         width: 867px;
+     }
+
     ul{
         list-style: initial;
         padding-left: rem(20px);
@@ -28,6 +35,9 @@
         .bonus-reviews-wrapper{
             gap: rem(30px);
             padding: 0 rem(9px);
+            .reviews-text{
+                width: 100%;
+            }
         }
         .img-wrapper{
             flex: 50%;
@@ -35,6 +45,7 @@
         ul{
             padding-left: rem(15px);
         }
+        
     }
 }
 @media (max-width: 768px){
@@ -42,6 +53,9 @@
         padding: rem(50px) 0;
         .bonus-reviews-wrapper{
             flex-direction: column-reverse;
+            .title{
+                font-size: 27px;
+            }
         }
         .reviews-text{
             gap: rem(30px);

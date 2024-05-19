@@ -75,6 +75,9 @@
     .bonus-terms .img-wrapper img{
         width: 75%;
     }
+    .bonus-terms .img-wrapper{
+       flex: 0;
+    }
     .bonus-terms .term-inner h2{
         font-size: 30px;
     }

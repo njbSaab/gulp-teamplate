@@ -1,3 +1,10 @@
+body,section,h2,p,div,ul,li,a{
+  font-family: Inter;
+}
+section{
+  overflow: hidden;
+  width: 100%;
+}
 a{
   color: inherit;
 }
@@ -13,12 +20,14 @@ a{
   height: auto;
 }
 .title{
-  @include resp-font-size(45, 65);
+  @include resp-font-size(45);
   color: $base-text;
   line-height: normal;
   font-style: normal;
   font-weight: 400;
   opacity: 0;
+  font-family: Inter;
+
 }
 
 .title.revealed{
@@ -27,19 +36,25 @@ a{
   will-change: opacity;
 }
 
-.font-25{
+.font-25,
+.font-25 * > a{
   @include resp-font-size(25);
   color: $base-text;
   line-height: normal;
   font-style: normal;
   font-weight: 400;
+  font-family: Inter;
+
 }
-.font-22{
+.font-22,
+.font-22 * > a{
   @include resp-font-size(22);
   color: $base-text;
   line-height: normal;
   font-style: normal;
   font-weight: 400;
+  font-family: Inter;
+
 }
 
 .btn-wrapper{
@@ -49,59 +64,46 @@ a{
   margin: 0 auto;
 }
 
-.btn-regular{
+.btn-regular {
   padding:  rem(16px) rem(20px);
   background: $accent;
   border-radius: 10px;
   @include resp-font-size(24);
+  font-family: Inter;
   border: none;
-  position: relative;
-  overflow: hidden;
   cursor: pointer;
   text-align: center;
   width: fit-content;
   margin: 0 auto;
+  display: inline-block; 
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none; 
+  transition: filter .3s ease-in-out;
+  will-change: filter;
+  &:hover{
+    filter: brightness(1.1);
+    transition: filter .3s ease-in-out;
+    will-change: filter;
+  }
 }
 
-.btn-regular > span {
+.btn-regular .ripple {
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
   position: absolute;
-  background: #fff;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  pointer-events: none;
-  animation: ripples 0.6s linear infinite;
-  -webkit-animation: ripples 0.6s linear infinite;
-  border-radius: 50px;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -o-border-radius: 50px;
+  transform: scale(0);
+  animation: ripple 0.6s linear;
 }
 
-@keyframes ripples {
-  0% {
-    width: 0px;
-    height: 0px;
-    opacity: 0.5;
-  }
-  100% {
-    width: 500px;
-    height: 500px;
-    opacity: 0;
-  }
-}
-
-
-
-@keyframes ripple{
-  to{
+@keyframes ripple {
+  to {
     transform: scale(2.5);
     opacity: 0;
   }
 }
+
 
 @media (min-width: 1680px){
 
@@ -117,7 +119,7 @@ a{
     font-size: 16px;
   }
   .title{
-    font-size: 25px;
+    font-size: 27px;
   }
 }
 

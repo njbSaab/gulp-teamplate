@@ -1,16 +1,22 @@
 .main-page{
     background: $accent;
-    height: 100dvh;
+    height: 100%;
+
     header{
         padding: rem(56px) 0 rem(89px);
     }
+
     .img-wrapper{
         width: resp(343);
     }
+
     h1{
         @include resp-font-size(100);
         line-height: 110%;
+        font-family: Inter;
+        font-weight: 400;
     }
+
     .seven span {
         transform: translate(-300px, 0) scale(0);
         animation: sideSlide 1.5s ease-in-out;
@@ -18,14 +24,17 @@
     }
 
     p{
-        @include resp-font-size(60);
+        @include resp-font-size(55);
         line-height: 110%;
+        font-weight: 400;
         padding-bottom: rem(193px);
         opacity: 0; 
         transform: scale(0.95); 
         transition: all 1s ease-in-out; 
         animation: fadeInScaleUp 4s ease-in-out forwards 2s;
         will-change: transform, opacity; 
+        font-family: Inter;
+
     }
 
     .main-page-wrapper{
@@ -49,20 +58,33 @@
 }
 
 
+@media (max-width: 1660px){
+    .main-page{
+        img{
+            display: block;
+            margin: 0 auto;
+        }
+
+        .main-page-wrapper{
+            gap: (60px);
+        }
+    }
+}
 
 @media (max-width: 1200px){
     .main-page{
-        .main-page-wrapper{
-            gap: rem(100px);
-        }
-        .left-side-block{
-            flex: 0;
-        }
+        height: 100%;
         .right-side-block{
+            flex: 100%;
             img{
-                width: 75%;
+                width: 50%;
+            }
+            .svg-wrapper{
+                width: 100%;
+                display: flex;
             }
         }
+
     }    
 }
 
@@ -70,9 +92,12 @@
     .main-page{
         .right-side-block{
             img{
-                width: 50%;
-                display: block;
-                margin: 0 auto;
+                width: 70%;
+            }
+        }
+        .main-page-wrapper{
+            p{
+                padding-bottom: 100px;
             }
         }
     }
@@ -81,14 +106,31 @@
 @media (max-width: 450px){
     .main-page{
         padding: 0 rem(15px);
+
+        .main-page-wrapper h1{
+            font-size: 30px;
+        } 
+        .main-page-wrapper p{
+            font-size: 17px;
+        }
         .main-page-header{
             padding: rem(50px) 0;
         }
+        
         .main-page-wrapper{
             gap: rem(17px);
         }
         .img-wrapper{
             width: 103px;
+        }
+        .main-page-wrapper .left-side-block h1{
+            padding-bottom: 20px;
+        }
+        .svg-wrapper{
+            width: 125px;
+            img{
+               width: 100%;
+            }
         }
     }
 }
