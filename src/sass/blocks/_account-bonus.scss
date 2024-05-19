@@ -1,0 +1,126 @@
+.bonus-account{
+    padding: resp(100) 0;
+    .bonus-account-wrapper{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 50px;
+        width: 924px;
+        margin: 0 auto;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .bonus-account-wrapper .text-first-anim,
+    .bonus-account-wrapper .text-secnd-anim{
+        opacity: 0; 
+    }
+
+    .santan-anim {
+        position: relative;
+        width: resp(99);
+        color: transparent;
+        visibility: collapse;
+        &::after{
+            position: absolute;
+            transition: top .7s ease-out; 
+            top: -400px; 
+            content: 'Santan';
+            left: 50%;
+            transform: translateX(-50%);
+            color: $base-text;
+            width: 100%;
+            @include resp-font-size(30);
+            line-height: normal;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+    }
+
+    .bonus-account-wrapper .revealed {
+        transition: opacity .7s ease-in-out;
+        opacity: 1; 
+    }
+    .text-first-anim.revealed .santan-anim {
+        transition: top .7s ease-out; 
+        top: 0;
+        opacity: 1;
+        &::after{
+            transition: top .7s ease-out; 
+            top: -4px;
+            opacity: 1;
+        }
+    }
+
+    .btn-bonus-wrapper{
+        display: flex;
+        align-items: center;
+        gap: 47px;
+        padding: 28px 46px;
+        background: $accent;
+        border-radius: 50px;
+        animation: pulsateScale 10s ease-in-out infinite;
+        will-change: transform;
+    }
+
+    figure{
+        width: 146px;
+        height: 144px;
+    }
+    .btn-bonus-text{
+        @include resp-font-size(40);
+        color: $base-text;
+        line-height: normal;
+        font-style: normal;
+        font-weight: 400;
+    }
+    
+}
+@media (max-width: 1440px){
+    .bonus-account .bonus-account-wrapper{
+        gap: 30px;
+        max-width: resp(924);
+    }
+    .bonus-account-wrapper figure{
+        width: resp(146);
+        height: auto;
+    }
+}
+
+@media (max-width: 1024px){
+    .bonus-account{
+        padding: rem(50px) 0;
+        p{
+            font-size: 18px;
+        }
+    }
+}
+@media (max-width: 768px){
+    .bonus-account{
+        .btn-bonus-wrapper{
+            padding: rem(10px) rem(15px);
+            border-radius: 16.7px;
+        }
+        .btn-bonus-text{
+            font-size: 18px;
+        }
+        .img-wrapper{
+            width: 48px;
+        } 
+    }
+}
+
+@media (max-width: 450px){
+    .bonus-account{
+        .bonus-account-wrapper{
+            max-width: 100%;
+            padding: 0 20px;
+        }
+        .title{
+            text-transform: uppercase;
+        }
+        .btn-bonus-text{
+            font-size: 13px;
+        }
+    }
+}

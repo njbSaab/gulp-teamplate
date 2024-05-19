@@ -1,0 +1,131 @@
+a{
+  color: inherit;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.img-wrapper img{
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+}
+.title{
+  @include resp-font-size(45, 65);
+  color: $base-text;
+  line-height: normal;
+  font-style: normal;
+  font-weight: 400;
+  opacity: 0;
+}
+
+.title.revealed{
+  opacity: 1;
+  transition: opacity .5s ease-in-out;
+  will-change: opacity;
+}
+
+.font-25{
+  @include resp-font-size(25);
+  color: $base-text;
+  line-height: normal;
+  font-style: normal;
+  font-weight: 400;
+}
+.font-22{
+  @include resp-font-size(22);
+  color: $base-text;
+  line-height: normal;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.btn-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.btn-regular{
+  padding:  rem(16px) rem(20px);
+  background: $accent;
+  border-radius: 10px;
+  @include resp-font-size(24);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.btn-regular > span {
+  position: absolute;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: ripples 0.6s linear infinite;
+  -webkit-animation: ripples 0.6s linear infinite;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+@keyframes ripples {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0.5;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+  }
+}
+
+
+
+@keyframes ripple{
+  to{
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+@media (min-width: 1680px){
+
+}
+@media (max-width: 1024px){
+  .font-22{
+    font-size: 16px;
+  }
+  .font-25{
+    font-size: 18px;
+  }
+  .btn-regular{
+    font-size: 16px;
+  }
+  .title{
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 475px){
+  .font-22{
+    font-size: 14px;
+  }
+  .font-25{
+    font-size: 16px;
+  }
+}

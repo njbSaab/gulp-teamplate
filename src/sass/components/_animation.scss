@@ -1,0 +1,117 @@
+.anim-content{
+    .text,
+    .img-wrapper {
+        transition: transform 1s ease-out; 
+        transform: translateX(0); 
+    }
+
+    .text{
+        transform: translateX(-2000px)
+    }
+    
+    .reviews-text.text {
+        transform: translateX(2000px); 
+
+    }
+    .img-wrapper {
+        transform: translateX(2000px); 
+    }
+    .reviews-img{
+        transform: translateX(-2000px)
+    }
+    &.revealed{
+        .text,
+        .img-wrapper,
+        .reviews-img{
+            transform: translateX(0px);
+        }
+    }
+
+}
+.animate span:nth-of-type(1) { animation-delay: .05s; }
+.animate span:nth-of-type(2) { animation-delay: .1s; }
+.animate span:nth-of-type(3) { animation-delay: .15s; }
+.animate span:nth-of-type(4) { animation-delay: .2s; }
+.animate span:nth-of-type(5) { animation-delay: .25s; }
+.animate span:nth-of-type(6) { animation-delay: .3s; }
+.animate span:nth-of-type(7) { animation-delay: .35s; }
+.animate span:nth-of-type(8) { animation-delay: .4s; }
+.animate span:nth-of-type(9) { animation-delay: .45s; }
+.animate span:nth-of-type(10) { animation-delay: .5s; }
+.animate span:nth-of-type(11) { animation-delay: .55s; }
+.animate span:nth-of-type(12) { animation-delay: .6s; }
+.animate span:nth-of-type(13) { animation-delay: .65s; }
+.animate span:nth-of-type(14) { animation-delay: .7s; }
+.animate span:nth-of-type(15) { animation-delay: .75s; }
+.animate span:nth-of-type(16) { animation-delay: .8s; }
+.animate span:nth-of-type(17) { animation-delay: .85s; }
+.animate span:nth-of-type(18) { animation-delay: .9s; }
+.animate span:nth-of-type(19) { animation-delay: .95s; }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulsateScale{
+    0%, 100% {
+        transform: scale(.9);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+
+@keyframes sideSlide {
+    60% {
+      transform: translate(20px, 0) scale(1);
+      color: $base-text;
+    }
+  
+    80% {
+      transform: translate(20px, 0) scale(1);
+      color: $base-text;
+    }
+  
+    99% {
+      transform: translate(0) scale(1.2);
+      color: $alternative-bg;
+    }
+  
+    100% {
+      transform: translate(0) scale(1);
+      opacity: 1;
+      color: $base-text;
+    }
+}
+
+@keyframes lds-circle {
+    0%, 100% {
+      animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+    }
+    0% {
+      transform: rotateY(0deg);
+    }
+    50% {
+      transform: rotateY(1800deg);
+      animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+    }
+    100% {
+      transform: rotateY(3600deg);
+    }
+}
+
+@keyframes fadeInScaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

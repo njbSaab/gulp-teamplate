@@ -1,5 +1,5 @@
 перевая команда 
-suod npm i
+npm i
 ---------------
 npm run start - запуск
 npm run clean - очистка dist
@@ -7,22 +7,38 @@ npm run build - сборка бандла
 npm run format - запуск prettier
 ---------------
 
+Сбросьте кеш npm:
+npm cache clean --force
+
+Удалите файл package-lock.json:
+rm -f package-lock.json
+
+Удалите папку node_modules:
+rm -rf node_modules
+
+Установите зависимости заново:
+npm update
+npm install
+
+//instal node 18.17.1 
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+source ~/.bashrc
+nvm install 
+nvm use 18.17.1  # Use this version
+
+3. Verify nvm Installation:
+nvm -v
+
+5. Reinstall Node.js Packages:
+
+rm -rf node_modules package-lock.json 
+npm install 
+
+
+
+
 //main 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YENTO</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
-    <link rel="stylesheet" href="./css/style.min.css">
-
-</head>
 <body>
 
     {% include "components/header.html" %}

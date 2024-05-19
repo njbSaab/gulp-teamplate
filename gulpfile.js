@@ -10,9 +10,7 @@ const njk = require("gulp-nunjucks-render");
 const sourcemaps = require("gulp-sourcemaps");
 
 const libraries = [
-  "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
   "./node_modules/jquery/dist/jquery.min.js",
-  "./node_modules/swiper/swiper-bundle.min.js",
 ];
 
 // Static server
@@ -140,3 +138,4 @@ gulp.task(
     "images",
   ),
 );
+

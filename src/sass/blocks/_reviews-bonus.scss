@@ -1,0 +1,50 @@
+.bonus-reviews{
+    padding: 100px 0;
+    background: $alternative-bg;
+
+    .bonus-reviews-wrapper{
+        display: flex;
+        align-items: center;
+        gap: 136px;
+    }
+    .reviews-text{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .img-wrapper{
+        flex: 100%;
+    }
+    ul{
+        list-style: initial;
+        padding-left: rem(20px);
+    }
+    .title{
+        @include resp-font-size(45, 45)
+    }
+}
+@media (max-width: 1200px){
+    .bonus-reviews{
+        .bonus-reviews-wrapper{
+            gap: rem(30px);
+            padding: 0 rem(9px);
+        }
+        .img-wrapper{
+            flex: 50%;
+        }
+        ul{
+            padding-left: rem(15px);
+        }
+    }
+}
+@media (max-width: 768px){
+    .bonus-reviews{
+        padding: rem(50px) 0;
+        .bonus-reviews-wrapper{
+            flex-direction: column-reverse;
+        }
+        .reviews-text{
+            gap: rem(30px);
+        }
+    }
+}
